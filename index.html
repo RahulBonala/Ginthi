@@ -6,11 +6,48 @@
   <title>Gintic.ai — AI Workforce for Enterprise Finance</title>
   <meta name="description" content="Gintic deploys AI agents that handle accounts payable, receivables, month-end close, compliance, and bookkeeping — trained on your exact rules. Go live in 2 weeks.">
 
+  <link rel="canonical" href="https://gintic.ai">
+
   <meta property="og:title" content="Gintic.ai — AI Workforce for Enterprise Finance">
   <meta property="og:description" content="Gintic deploys AI agents that handle accounts payable, receivables, month-end close, compliance, and bookkeeping — trained on your exact rules. Go live in 2 weeks.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gintic.ai">
   <meta property="og:site_name" content="Gintic.ai">
+  <meta property="og:image" content="https://gintic.ai/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gintic.ai — AI Workforce for Enterprise Finance">
+  <meta name="twitter:description" content="Gintic deploys AI agents that handle accounts payable, receivables, month-end close, compliance, and bookkeeping — trained on your exact rules. Go live in 2 weeks.">
+  <meta name="twitter:image" content="https://gintic.ai/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gintic.ai",
+    "url": "https://gintic.ai",
+    "logo": "https://gintic.ai/og-image.png",
+    "description": "Gintic deploys AI agents that handle accounts payable, receivables, month-end close, compliance, and bookkeeping — trained on your exact rules. Go live in 2 weeks.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "60 Feet Rd, KHB Colony, 6th Block, Koramangala",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560095",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@gintic.ai",
+      "contactType": "sales"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/gintic-ai/"
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23033A00'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-size='20' font-weight='500' fill='%23FFFFFF'%3EG%3C/text%3E%3C/svg%3E">
 
@@ -53,6 +90,26 @@
       --error: #D40404;
       --warning-bg: #FFF8E1;
       --warning: #E65100;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      z-index: 10000;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 0 0 8px 8px;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 2px solid var(--white);
+      outline-offset: 2px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -144,6 +201,13 @@
       transition: background 0.2s, color 0.2s;
     }
     .btn-secondary:hover { background: var(--primary-dim); }
+
+    .hidden { display: none !important; }
+
+    .nav-links a.active {
+      color: var(--primary);
+      font-weight: 500;
+    }
 
     .reveal {
       opacity: 0;
@@ -676,53 +740,129 @@
     .use-cases {
       padding: 80px 0;
       background: var(--neutral-50);
+    }
+
+    /* Design switcher */
+    .uc-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .uc-switcher {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      padding-bottom: 8px;
+    }
+    .uc-switcher-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--neutral-500);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .uc-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--neutral-100);
+      background: var(--white);
+      color: var(--neutral-900);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      font-size: 18px;
+    }
+    .uc-arrow:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+    .uc-arrow.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+    .uc-dot-indicators {
+      display: flex;
+      gap: 8px;
+    }
+    .uc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      background: var(--neutral-300);
+      transition: background 0.2s, transform 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .uc-dot:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+    .uc-dot.active {
+      background: var(--primary);
+      transform: scale(1.25);
+    }
+
+    /* Grid containers */
+    .uc-grid-wrap {
       position: relative;
+      margin-top: 48px;
+      overflow: hidden;
     }
-    .use-cases::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: 0.03;
-      pointer-events: none;
-      background-image:
-        radial-gradient(circle at 20% 30%, var(--primary) 0px, transparent 1px),
-        radial-gradient(circle at 80% 70%, var(--primary) 0px, transparent 1px);
-      background-size: 40px 40px;
-    }
-    .use-cases .container { position: relative; z-index: 1; }
     .use-cases-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
+      grid-auto-rows: auto;
+      gap: 20px;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
-    .uc-card {
+    .use-cases-grid.hidden {
+      display: none !important;
+    }
+    .use-cases-grid.fade-out {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    .use-cases-grid.fade-in {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    /* ============ DESIGN A: Clean flat cards ============ */
+    .design-a .uc-card-a {
       background: var(--white);
       border: 1px solid var(--neutral-100);
       border-radius: 12px;
       padding: 32px 24px;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
       overflow: hidden;
     }
-    .uc-card::before {
+    .design-a .uc-card-a::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--primary) 0%, var(--primary-mid) 100%);
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .uc-card:hover {
+    .design-a .uc-card-a:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(3,58,0,0.08);
     }
-    .uc-card:hover::before { opacity: 1; }
-
-    .uc-icon {
+    .design-a .uc-card-a:hover::before { opacity: 1; }
+    .design-a .uc-icon-a {
       width: 48px;
       height: 48px;
       border-radius: 12px;
@@ -732,14 +872,16 @@
       justify-content: center;
       margin-bottom: 16px;
     }
-    .uc-icon svg {
+    .design-a .uc-icon-a svg {
       width: 24px;
       height: 24px;
       stroke: var(--primary);
       fill: none;
       stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    .uc-number {
+    .design-a .uc-number-a {
       font-family: 'DM Mono', monospace;
       font-size: 11px;
       color: var(--white);
@@ -752,26 +894,29 @@
       justify-content: center;
       margin-bottom: 16px;
     }
-    .uc-title {
+    .design-a .uc-title-a {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 500;
       font-size: 18px;
       color: var(--neutral-900);
       margin-bottom: 16px;
     }
-    .uc-items {
+    .design-a .uc-items-a {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .design-a .uc-item-a {
       font-family: 'DM Sans', sans-serif;
       font-weight: 400;
       font-size: 14px;
       color: var(--neutral-500);
-      line-height: 2;
-    }
-    .uc-item-line {
       display: flex;
       align-items: center;
       gap: 8px;
+      line-height: 1.5;
     }
-    .uc-item-line::before {
+    .design-a .uc-item-a::before {
       content: '';
       width: 4px;
       height: 4px;
@@ -779,18 +924,163 @@
       background: var(--primary-mid);
       flex-shrink: 0;
     }
+
+    /* ============ DESIGN B: Bento dark/light ============ */
+    /* Bento: featured cards span 2 cols */
+    .uc-card.uc-wide { grid-column: span 2; }
+
+    .uc-card {
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .uc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(3,58,0,0.10);
+    }
+
+    /* Card header — colored band with number + icon */
+    .uc-header {
+      padding: 24px 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .uc-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .uc-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .uc-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .uc-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    /* Large watermark number */
+    .uc-watermark {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 72px;
+      line-height: 1;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .uc-body {
+      padding: 0 24px 24px;
+      flex: 1;
+    }
+    .uc-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .uc-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .uc-item-line {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .uc-item-line::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ---- Dark variant (cards 1, 3, 5) ---- */
+    .uc-card.uc-dark {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .uc-card.uc-dark .uc-number {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+    }
+    .uc-card.uc-dark .uc-icon svg { stroke: var(--primary-lighter); }
+    .uc-card.uc-dark .uc-watermark { color: var(--white); opacity: 0.06; }
+    .uc-card.uc-dark .uc-title { color: var(--white); }
+    .uc-card.uc-dark .uc-item-line { color: var(--primary-lighter); }
+    .uc-card.uc-dark .uc-item-line::before { background: var(--primary-light); }
+    .uc-card.uc-dark:hover { box-shadow: 0 16px 40px rgba(3,58,0,0.25); }
+
+    /* ---- Light variant (cards 2, 4, 6) ---- */
+    .uc-card.uc-light {
+      background: var(--white);
+      border: 1px solid var(--neutral-100);
+      color: var(--neutral-900);
+    }
+    .uc-card.uc-light .uc-number {
+      background: var(--primary-dim);
+      color: var(--primary);
+    }
+    .uc-card.uc-light .uc-icon svg { stroke: var(--primary); }
+    .uc-card.uc-light .uc-watermark { color: var(--neutral-900); opacity: 0.04; }
+    .uc-card.uc-light .uc-title { color: var(--neutral-900); }
+    .uc-card.uc-light .uc-item-line { color: var(--neutral-500); }
+    .uc-card.uc-light .uc-item-line::before { background: var(--primary-mid); }
+
+    /* CTA card */
     .uc-card-cta {
       grid-column: 1 / -1;
       background: var(--white);
       border: 2px dashed var(--primary-light);
-      border-radius: 12px;
-      padding: 24px;
+      border-radius: 16px;
+      padding: 32px;
       text-align: center;
-      transition: background 0.2s, border-color 0.2s;
+      transition: background 0.2s, border-color 0.2s, transform 0.3s;
     }
     .uc-card-cta:hover {
       background: var(--primary-dim);
       border-color: var(--primary);
+      transform: translateY(-2px);
     }
     .uc-card-cta a {
       font-family: 'DM Sans', sans-serif;
@@ -799,13 +1089,484 @@
       color: var(--primary);
     }
 
-    /* Staggered card reveals */
+    /* Staggered reveals */
     .uc-card.reveal:nth-child(1) { transition-delay: 0s; }
     .uc-card.reveal:nth-child(2) { transition-delay: 0.08s; }
     .uc-card.reveal:nth-child(3) { transition-delay: 0.16s; }
     .uc-card.reveal:nth-child(4) { transition-delay: 0.24s; }
     .uc-card.reveal:nth-child(5) { transition-delay: 0.32s; }
     .uc-card.reveal:nth-child(6) { transition-delay: 0.4s; }
+
+    /* ============ DESIGN C: Accordion Expand Strip ============ */
+    .use-cases-grid.design-c {
+      display: block;
+      grid-template-columns: none;
+    }
+    .uc-accordion {
+      display: flex;
+      gap: 4px;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(3, 58, 0, 0.06);
+    }
+    .uc-acc-panel {
+      flex: 1 1 0;
+      min-width: 0;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: var(--white);
+      border-right: 1px solid var(--neutral-100);
+    }
+    .uc-acc-panel:last-child { border-right: none; }
+    .uc-acc-panel:hover,
+    .uc-acc-panel:focus-within {
+      flex: 3.5;
+    }
+    .uc-acc-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--primary) 0%, #0a5a04 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+    .uc-acc-panel:hover::before,
+    .uc-acc-panel:focus-within::before {
+      opacity: 1;
+    }
+    .uc-acc-rest {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+    .uc-acc-panel:hover .uc-acc-rest,
+    .uc-acc-panel:focus-within .uc-acc-rest {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .uc-acc-rest-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--white);
+      background: var(--primary);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .uc-acc-rest-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--neutral-900);
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+    .uc-acc-rest-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--primary-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .uc-acc-rest-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .uc-acc-expanded {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.35s ease 0.15s, transform 0.35s ease 0.15s;
+    }
+    .uc-acc-panel:hover .uc-acc-expanded,
+    .uc-acc-panel:focus-within .uc-acc-expanded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .uc-acc-exp-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 80px;
+      color: rgba(255, 255, 255, 0.08);
+      line-height: 1;
+      position: absolute;
+      top: 20px;
+      right: 24px;
+    }
+    .uc-acc-exp-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .uc-acc-exp-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .uc-acc-exp-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.12);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .uc-acc-exp-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .uc-acc-exp-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .uc-acc-exp-item {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .uc-acc-panel:hover .uc-acc-exp-item:nth-child(1),
+    .uc-acc-panel:focus-within .uc-acc-exp-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+    .uc-acc-panel:hover .uc-acc-exp-item:nth-child(2),
+    .uc-acc-panel:focus-within .uc-acc-exp-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
+    .uc-acc-panel:hover .uc-acc-exp-item:nth-child(3),
+    .uc-acc-panel:focus-within .uc-acc-exp-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.36s; }
+    .uc-acc-exp-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+    }
+    .design-c .uc-card-cta {
+      margin-top: 20px;
+      grid-column: unset;
+    }
+    @media (max-width: 768px) {
+      .uc-accordion {
+        flex-direction: column;
+        height: auto;
+      }
+      .uc-acc-panel {
+        flex: none;
+        height: auto;
+        min-height: 80px;
+        border-right: none;
+        border-bottom: 1px solid var(--neutral-100);
+      }
+      .uc-acc-panel::before { opacity: 1; }
+      .uc-acc-rest { display: none; }
+      .uc-acc-expanded {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        padding: 20px 24px;
+      }
+      .uc-acc-exp-item { opacity: 1; transform: none; }
+      .uc-acc-exp-num { display: none; }
+    }
+
+    /* ============ DESIGN D: Vertical timeline ============ */
+    /* Pattern: stepped narrative / journey (enterprise “capabilities” storytelling) */
+    /* ============ DESIGN D: Spotlight Tab Panel ============ */
+    .use-cases-grid.design-d {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      background: var(--white);
+      border: 1px solid var(--neutral-100);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(3, 58, 0, 0.06);
+      min-height: 380px;
+    }
+    .uc-spot-tabs {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--neutral-100);
+      background: var(--neutral-50);
+    }
+    .uc-spot-tab {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      text-align: left;
+      width: 100%;
+      border-left: 3px solid transparent;
+      transition: background 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+    .uc-spot-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background: var(--neutral-100);
+    }
+    .uc-spot-tab:last-child::after { display: none; }
+    .uc-spot-tab:hover {
+      background: var(--white);
+    }
+    .uc-spot-tab.active {
+      background: var(--white);
+      border-left-color: var(--primary);
+      box-shadow: inset 0 0 0 0 transparent, 4px 0 12px -4px rgba(3, 58, 0, 0.06);
+    }
+    .uc-spot-tab-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.25s ease, color 0.25s ease;
+      background: var(--neutral-100);
+      color: var(--neutral-500);
+    }
+    .uc-spot-tab.active .uc-spot-tab-num {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .uc-spot-tab:hover .uc-spot-tab-num {
+      background: var(--primary-dim);
+      color: var(--primary);
+    }
+    .uc-spot-tab.active:hover .uc-spot-tab-num {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .uc-spot-tab-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--neutral-500);
+      transition: color 0.25s ease;
+    }
+    .uc-spot-tab.active .uc-spot-tab-title,
+    .uc-spot-tab:hover .uc-spot-tab-title {
+      color: var(--neutral-900);
+    }
+    .uc-spot-tab-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .uc-spot-tab.active .uc-spot-tab-icon,
+    .uc-spot-tab:hover .uc-spot-tab-icon {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .uc-spot-tab-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .uc-spot-detail {
+      position: relative;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .uc-spot-card {
+      display: none;
+      animation: ucSpotIn 0.4s ease forwards;
+    }
+    .uc-spot-card.active {
+      display: block;
+    }
+    @keyframes ucSpotIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .uc-spot-watermark {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 160px;
+      line-height: 1;
+      color: var(--primary);
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+    }
+    .uc-spot-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--primary-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .uc-spot-card-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .uc-spot-card-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--primary);
+      background: var(--primary-dim);
+      padding: 4px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .uc-spot-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 28px;
+      color: var(--neutral-900);
+      margin-bottom: 20px;
+    }
+    .uc-spot-card-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .uc-spot-card-item {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--neutral-500);
+      line-height: 1.55;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      background: var(--neutral-50);
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .uc-spot-card-item:hover {
+      border-color: var(--primary-light);
+      background: var(--white);
+      transform: translateX(4px);
+    }
+    .uc-spot-card-item::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary-mid);
+      flex-shrink: 0;
+    }
+    .design-d .uc-card-cta {
+      grid-column: 1 / -1;
+      border-radius: 0 0 16px 16px;
+      border-top: 1px solid var(--neutral-100);
+      margin-top: 0;
+    }
+    @media (max-width: 768px) {
+      .use-cases-grid.design-d {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .uc-spot-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--neutral-100);
+        -webkit-overflow-scrolling: touch;
+      }
+      .uc-spot-tab {
+        white-space: nowrap;
+        padding: 14px 16px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        flex-shrink: 0;
+      }
+      .uc-spot-tab::after { display: none; }
+      .uc-spot-tab.active {
+        border-bottom-color: var(--primary);
+        border-left-color: transparent;
+      }
+      .uc-spot-tab-icon { display: none; }
+      .uc-spot-detail { padding: 24px; }
+      .uc-spot-watermark { font-size: 100px; }
+      .uc-spot-card-title { font-size: 22px; }
+    }
 
     /* =================================================================
        WHY GINTIC
@@ -1258,6 +2019,66 @@
     }
 
     /* =================================================================
+       FAQ
+       ================================================================= */
+    .faq {
+      padding: 80px 0;
+      background: var(--neutral-50);
+    }
+    .faq-list {
+      max-width: 720px;
+      margin: 48px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--neutral-100);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--neutral-900);
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: var(--neutral-50); }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--neutral-500);
+      line-height: 1.6;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    /* =================================================================
        FINAL CTA
        ================================================================= */
     .final-cta {
@@ -1316,6 +2137,52 @@
       font-weight: 400;
       font-size: 12px;
       color: var(--primary-light);
+    }
+
+    .demo-form {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .demo-form-row {
+      display: flex;
+      gap: 12px;
+    }
+    .demo-input {
+      flex: 1;
+      min-height: 48px;
+      padding: 0 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .demo-input::placeholder { color: rgba(255,255,255,0.5); }
+    .demo-input:focus {
+      outline: none;
+      border-color: rgba(255,255,255,0.5);
+    }
+    .demo-input option { color: var(--neutral-900); background: var(--white); }
+    .demo-submit {
+      background: var(--white);
+      color: var(--primary);
+      width: 100%;
+      margin-top: 4px;
+    }
+    .demo-submit:hover { background: var(--neutral-50); }
+    .demo-success {
+      text-align: center;
+      color: var(--white);
+    }
+
+    @media (max-width: 480px) {
+      .demo-form-row { flex-direction: column; }
     }
 
     /* =================================================================
@@ -1480,6 +2347,9 @@
       .hero-sub { font-size: 14px; }
 
       .use-cases-grid { grid-template-columns: 1fr; }
+      .uc-card.uc-wide { grid-column: span 1; }
+      .uc-header-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .uc-switcher { align-self: flex-start; }
 
       .why-block {
         grid-template-columns: 1fr;
@@ -1528,6 +2398,8 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ============================================================
        NAVIGATION
        ============================================================ -->
@@ -1545,7 +2417,6 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
-      <!-- REPLACE: Insert your Calendly/booking link in the href below -->
       <a href="#book-demo" class="nav-cta nav-cta-desktop">Book a demo</a>
 
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -1562,11 +2433,10 @@
     <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
     <a href="#security" class="mobile-nav-link">Security</a>
     <a href="#faq" class="mobile-nav-link">FAQ</a>
-    <!-- REPLACE: Insert your Calendly/booking link in the href below -->
     <a href="#book-demo" class="btn-primary">Book a demo</a>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- ============================================================
          HERO SECTION
@@ -1576,7 +2446,7 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-content">
-            <div class="hero-label">[01] Enterprise AI Workforce</div>
+            <div class="hero-label">Enterprise AI Workforce</div>
             <h1>
               <span class="line">Enterprise Grade AI Agents</span>
               <span class="line">for complex back office</span>
@@ -1584,12 +2454,10 @@
             </h1>
             <p class="hero-sub">Built completely around your way of working. Get an AI workforce that handles the work, so your team can handle the decisions.</p>
             <div class="hero-ctas">
-              <!-- REPLACE: Insert your Calendly/booking link in the href below -->
               <a href="#book-demo" class="btn-primary">Book a demo →</a>
               <button class="btn-secondary" id="open-video-btn">Watch 2-min overview ▶</button>
             </div>
-            <!-- REPLACE: Insert 3 real client company names -->
-            <p class="hero-proof">Trusted by finance teams at [CLIENT NAME 1], [CLIENT NAME 2], [CLIENT NAME 3]</p>
+            <p class="hero-proof">Trusted by finance teams across India's leading enterprises</p>
           </div>
 
           <div class="hero-mockup">
@@ -1620,26 +2488,24 @@
     <dialog class="video-dialog" id="video-dialog">
       <div class="video-dialog-inner">
         <button class="video-dialog-close" aria-label="Close video">&times;</button>
-        <div class="video-placeholder">
-          <!-- REPLACE: Insert Loom/video URL here. Replace this div with:
-               <iframe src="https://www.loom.com/embed/YOUR_LOOM_ID" frameborder="0" allowfullscreen style="width:100%;height:420px;border-radius:8px"></iframe>
-          -->
-          [VIDEO PLACEHOLDER — Insert Loom embed URL]
+        <div class="video-placeholder" style="display:flex;align-items:center;justify-content:center;min-height:420px;color:var(--neutral-500);font-family:'DM Sans',sans-serif;font-size:16px;background:var(--neutral-900);border-radius:8px">
+          <div style="text-align:center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;margin:0 auto 12px;display:block;opacity:0.4"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Video coming soon
+          </div>
         </div>
       </div>
     </dialog>
 
     <!-- ============================================================
-         LOGO / TRUST STRIP — Section [01]
+         LOGO / TRUST STRIP
          ============================================================ -->
     <section class="logo-strip" id="trust">
       <div class="logo-strip-label">
-        <span class="section-label">[01] Trusted by top brands</span>
+        <span class="section-label">Trusted by top brands</span>
       </div>
       <div class="marquee-wrap">
         <div class="marquee-track">
-          <!-- REPLACE: Insert client logo image src for each slot -->
-          <!-- REPLACE: Insert client company name for each slot -->
           <div class="logo-slot">
             <div class="logo-img" role="img" alt="[LOGO: Company Name 1]">[LOGO 1]</div>
             <span class="logo-name">[Company Name 1]</span>
@@ -1701,112 +2567,460 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         CUSTOMER QUOTE SECTION
-         ============================================================ -->
-    <!-- If no client quote is available yet, hide this entire section with display:none and remove before launch -->
-    <section class="quote-section">
+    <!-- Customer quote section — hidden until real testimonial is available -->
+    <section class="quote-section" style="display:none">
       <div class="quote-inner reveal">
         <span class="quote-mark" aria-hidden="true">"</span>
-        <!-- REPLACE: Insert real client quote -->
-        <p class="quote-text">"[REPLACE WITH REAL CLIENT QUOTE — e.g.: 'Gintic gave us back our weekends during month-end. What used to take 8 days now takes 3.']"</p>
-        <!-- REPLACE: Insert client name, title, company -->
-        <p class="quote-attribution">— [CLIENT NAME], [TITLE] at [COMPANY NAME]</p>
-        <!-- REPLACE: Insert real metric e.g. 8 days → 3 days -->
-        <span class="quote-metric">[X days → Y days] Month-end close &nbsp;|&nbsp; [Z%] Reduction in exceptions</span>
+        <p class="quote-text"></p>
+        <p class="quote-attribution"></p>
+        <span class="quote-metric"></span>
       </div>
     </section>
 
     <!-- ============================================================
-         USE CASES — Section [02]
+         USE CASES
          ============================================================ -->
     <section class="use-cases" id="use-cases">
       <div class="container">
-        <div class="reveal">
-          <div class="section-label">[02] Use cases</div>
-          <h2 class="section-headline">What we've built so far.<br>Workflows we've transformed for enterprises.</h2>
+        <div class="uc-header-row reveal">
+          <div>
+            <div class="section-label">Use cases</div>
+            <h2 class="section-headline">What we've built so far.<br>Workflows we've transformed for enterprises.</h2>
+          </div>
+          <div class="uc-switcher">
+            <div class="uc-dot-indicators" aria-label="Use case layout">
+              <button type="button" class="uc-dot active" data-design="a" aria-label="Layout A: grid cards" aria-current="true"></button>
+              <button type="button" class="uc-dot" data-design="b" aria-label="Layout B: bento"></button>
+              <button type="button" class="uc-dot" data-design="c" aria-label="Layout C: accordion strip"></button>
+              <button type="button" class="uc-dot" data-design="d" aria-label="Layout D: spotlight panel"></button>
+            </div>
+            <button class="uc-arrow" id="uc-prev" aria-label="Previous design">←</button>
+            <button class="uc-arrow" id="uc-next" aria-label="Next design">→</button>
+          </div>
         </div>
-        <div class="use-cases-grid">
-          <div class="uc-card reveal">
-            <div class="uc-icon" aria-hidden="true">
+        <div class="uc-grid-wrap">
+
+        <!-- ======== DESIGN A: Clean flat cards ======== -->
+        <div class="use-cases-grid design-a" id="uc-design-a">
+          <div class="uc-card-a reveal">
+            <div class="uc-icon-a" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
             </div>
-            <div class="uc-number">01</div>
-            <div class="uc-title">Accounts payable</div>
-            <div class="uc-items">
-              <div class="uc-item-line">Invoice Processing</div>
-              <div class="uc-item-line">Vendor Reconciliation</div>
+            <div class="uc-number-a">01</div>
+            <div class="uc-title-a">Accounts payable</div>
+            <div class="uc-items-a">
+              <div class="uc-item-a">Invoice Processing</div>
+              <div class="uc-item-a">Vendor Reconciliation</div>
             </div>
           </div>
-          <div class="uc-card reveal">
-            <div class="uc-icon" aria-hidden="true">
+          <div class="uc-card-a reveal">
+            <div class="uc-icon-a" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5 5-5-5"/><path d="M7 17l5-5 5 5"/></svg>
             </div>
-            <div class="uc-number">02</div>
-            <div class="uc-title">Accounts receivable</div>
-            <div class="uc-items">
-              <div class="uc-item-line">3 way matching</div>
-              <div class="uc-item-line">Revenue recognition</div>
+            <div class="uc-number-a">02</div>
+            <div class="uc-title-a">Accounts receivable</div>
+            <div class="uc-items-a">
+              <div class="uc-item-a">3 way matching</div>
+              <div class="uc-item-a">Revenue recognition</div>
             </div>
           </div>
-          <div class="uc-card reveal">
-            <div class="uc-icon" aria-hidden="true">
+          <div class="uc-card-a reveal">
+            <div class="uc-icon-a" aria-hidden="true">
               <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M16 2v4M8 2v4"/><path d="M8 15l2 2 4-4"/></svg>
             </div>
-            <div class="uc-number">03</div>
-            <div class="uc-title">Month end close</div>
-            <div class="uc-items">
-              <div class="uc-item-line">SL - GL reconciliation</div>
-              <div class="uc-item-line">Provisioning and actualisation</div>
+            <div class="uc-number-a">03</div>
+            <div class="uc-title-a">Month end close</div>
+            <div class="uc-items-a">
+              <div class="uc-item-a">SL - GL reconciliation</div>
+              <div class="uc-item-a">Provisioning and actualisation</div>
             </div>
           </div>
-          <div class="uc-card reveal">
-            <div class="uc-icon" aria-hidden="true">
+          <div class="uc-card-a reveal">
+            <div class="uc-icon-a" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h5"/></svg>
             </div>
-            <div class="uc-number">04</div>
-            <div class="uc-title">Book-keeping</div>
-            <div class="uc-items">
-              <div class="uc-item-line">Automated journal entries</div>
+            <div class="uc-number-a">04</div>
+            <div class="uc-title-a">Book-keeping</div>
+            <div class="uc-items-a">
+              <div class="uc-item-a">Automated journal entries</div>
             </div>
           </div>
-          <div class="uc-card reveal">
-            <div class="uc-icon" aria-hidden="true">
+          <div class="uc-card-a reveal">
+            <div class="uc-icon-a" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
             </div>
-            <div class="uc-number">05</div>
-            <div class="uc-title">Compliance</div>
-            <div class="uc-items">
-              <div class="uc-item-line">GST sales register vs books vs E-invoice matching</div>
-              <div class="uc-item-line">GSTR 2B reconciliation</div>
-              <div class="uc-item-line">Master data management</div>
+            <div class="uc-number-a">05</div>
+            <div class="uc-title-a">Compliance</div>
+            <div class="uc-items-a">
+              <div class="uc-item-a">GST sales register vs books vs E-invoice matching</div>
+              <div class="uc-item-a">GSTR 2B reconciliation</div>
+              <div class="uc-item-a">Master data management</div>
             </div>
           </div>
-          <div class="uc-card reveal">
-            <div class="uc-icon" aria-hidden="true">
+          <div class="uc-card-a reveal">
+            <div class="uc-icon-a" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
             </div>
-            <div class="uc-number">06</div>
-            <div class="uc-title">Procurement</div>
-            <div class="uc-items">
-              <div class="uc-item-line">Contract intelligence</div>
+            <div class="uc-number-a">06</div>
+            <div class="uc-title-a">Procurement</div>
+            <div class="uc-items-a">
+              <div class="uc-item-a">Contract intelligence</div>
             </div>
           </div>
           <div class="uc-card-cta reveal">
-            <!-- REPLACE: Insert your Calendly/booking link in the href below -->
             <a href="#book-demo">and more on the way.....</a>
           </div>
         </div>
+
+        <!-- ======== DESIGN B: Bento dark/light ======== -->
+        <div class="use-cases-grid hidden" id="uc-design-b">
+
+          <!-- Card 1: AP — dark, wide -->
+          <div class="uc-card uc-dark uc-wide reveal">
+            <div class="uc-header">
+              <div class="uc-header-left">
+                <div class="uc-number">01</div>
+                <div class="uc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                </div>
+              </div>
+              <span class="uc-watermark" aria-hidden="true">01</span>
+            </div>
+            <div class="uc-body">
+              <div class="uc-title">Accounts payable</div>
+              <div class="uc-items">
+                <div class="uc-item-line">Invoice Processing</div>
+                <div class="uc-item-line">Vendor Reconciliation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: AR — light -->
+          <div class="uc-card uc-light reveal">
+            <div class="uc-header">
+              <div class="uc-header-left">
+                <div class="uc-number">02</div>
+                <div class="uc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5 5-5-5"/><path d="M7 17l5-5 5 5"/></svg>
+                </div>
+              </div>
+              <span class="uc-watermark" aria-hidden="true">02</span>
+            </div>
+            <div class="uc-body">
+              <div class="uc-title">Accounts receivable</div>
+              <div class="uc-items">
+                <div class="uc-item-line">3 way matching</div>
+                <div class="uc-item-line">Revenue recognition</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Month-end — light (matches 02) -->
+          <div class="uc-card uc-light reveal">
+            <div class="uc-header">
+              <div class="uc-header-left">
+                <div class="uc-number">03</div>
+                <div class="uc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M16 2v4M8 2v4"/><path d="M8 15l2 2 4-4"/></svg>
+                </div>
+              </div>
+              <span class="uc-watermark" aria-hidden="true">03</span>
+            </div>
+            <div class="uc-body">
+              <div class="uc-title">Month end close</div>
+              <div class="uc-items">
+                <div class="uc-item-line">SL - GL reconciliation</div>
+                <div class="uc-item-line">Provisioning and actualisation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Bookkeeping — dark, wide (matches 01) -->
+          <div class="uc-card uc-dark uc-wide reveal">
+            <div class="uc-header">
+              <div class="uc-header-left">
+                <div class="uc-number">04</div>
+                <div class="uc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h5"/></svg>
+                </div>
+              </div>
+              <span class="uc-watermark" aria-hidden="true">04</span>
+            </div>
+            <div class="uc-body">
+              <div class="uc-title">Book-keeping</div>
+              <div class="uc-items">
+                <div class="uc-item-line">Automated journal entries</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Compliance — dark, wide -->
+          <div class="uc-card uc-dark uc-wide reveal">
+            <div class="uc-header">
+              <div class="uc-header-left">
+                <div class="uc-number">05</div>
+                <div class="uc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+              </div>
+              <span class="uc-watermark" aria-hidden="true">05</span>
+            </div>
+            <div class="uc-body">
+              <div class="uc-title">Compliance</div>
+              <div class="uc-items">
+                <div class="uc-item-line">GST sales register vs books vs E-invoice matching</div>
+                <div class="uc-item-line">GSTR 2B reconciliation</div>
+                <div class="uc-item-line">Master data management</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Procurement — light -->
+          <div class="uc-card uc-light reveal">
+            <div class="uc-header">
+              <div class="uc-header-left">
+                <div class="uc-number">06</div>
+                <div class="uc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+                </div>
+              </div>
+              <span class="uc-watermark" aria-hidden="true">06</span>
+            </div>
+            <div class="uc-body">
+              <div class="uc-title">Procurement</div>
+              <div class="uc-items">
+                <div class="uc-item-line">Contract intelligence</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA card -->
+          <div class="uc-card-cta reveal">
+            <a href="#book-demo">and more on the way.....</a>
+          </div>
+        </div>
+
+        <!-- ======== DESIGN C: Accordion Expand Strip ======== -->
+        <div class="use-cases-grid design-c hidden" id="uc-design-c">
+          <div class="uc-accordion">
+            <div class="uc-acc-panel" tabindex="0">
+              <div class="uc-acc-rest">
+                <div class="uc-acc-rest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+                <span class="uc-acc-rest-num">01</span>
+                <span class="uc-acc-rest-title">Accounts payable</span>
+              </div>
+              <div class="uc-acc-expanded">
+                <span class="uc-acc-exp-num" aria-hidden="true">01</span>
+                <div class="uc-acc-exp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+                <span class="uc-acc-exp-badge">Use case 01</span>
+                <div class="uc-acc-exp-title">Accounts payable</div>
+                <div class="uc-acc-exp-items">
+                  <div class="uc-acc-exp-item">Invoice Processing</div>
+                  <div class="uc-acc-exp-item">Vendor Reconciliation</div>
+                </div>
+              </div>
+            </div>
+            <div class="uc-acc-panel" tabindex="0">
+              <div class="uc-acc-rest">
+                <div class="uc-acc-rest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5 5-5-5"/><path d="M7 17l5-5 5 5"/></svg></div>
+                <span class="uc-acc-rest-num">02</span>
+                <span class="uc-acc-rest-title">Accounts receivable</span>
+              </div>
+              <div class="uc-acc-expanded">
+                <span class="uc-acc-exp-num" aria-hidden="true">02</span>
+                <div class="uc-acc-exp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5 5-5-5"/><path d="M7 17l5-5 5 5"/></svg></div>
+                <span class="uc-acc-exp-badge">Use case 02</span>
+                <div class="uc-acc-exp-title">Accounts receivable</div>
+                <div class="uc-acc-exp-items">
+                  <div class="uc-acc-exp-item">3 way matching</div>
+                  <div class="uc-acc-exp-item">Revenue recognition</div>
+                </div>
+              </div>
+            </div>
+            <div class="uc-acc-panel" tabindex="0">
+              <div class="uc-acc-rest">
+                <div class="uc-acc-rest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M16 2v4M8 2v4"/><path d="M8 15l2 2 4-4"/></svg></div>
+                <span class="uc-acc-rest-num">03</span>
+                <span class="uc-acc-rest-title">Month end close</span>
+              </div>
+              <div class="uc-acc-expanded">
+                <span class="uc-acc-exp-num" aria-hidden="true">03</span>
+                <div class="uc-acc-exp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M16 2v4M8 2v4"/><path d="M8 15l2 2 4-4"/></svg></div>
+                <span class="uc-acc-exp-badge">Use case 03</span>
+                <div class="uc-acc-exp-title">Month end close</div>
+                <div class="uc-acc-exp-items">
+                  <div class="uc-acc-exp-item">SL - GL reconciliation</div>
+                  <div class="uc-acc-exp-item">Provisioning and actualisation</div>
+                </div>
+              </div>
+            </div>
+            <div class="uc-acc-panel" tabindex="0">
+              <div class="uc-acc-rest">
+                <div class="uc-acc-rest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h5"/></svg></div>
+                <span class="uc-acc-rest-num">04</span>
+                <span class="uc-acc-rest-title">Book-keeping</span>
+              </div>
+              <div class="uc-acc-expanded">
+                <span class="uc-acc-exp-num" aria-hidden="true">04</span>
+                <div class="uc-acc-exp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h5"/></svg></div>
+                <span class="uc-acc-exp-badge">Use case 04</span>
+                <div class="uc-acc-exp-title">Book-keeping</div>
+                <div class="uc-acc-exp-items">
+                  <div class="uc-acc-exp-item">Automated journal entries</div>
+                </div>
+              </div>
+            </div>
+            <div class="uc-acc-panel" tabindex="0">
+              <div class="uc-acc-rest">
+                <div class="uc-acc-rest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <span class="uc-acc-rest-num">05</span>
+                <span class="uc-acc-rest-title">Compliance</span>
+              </div>
+              <div class="uc-acc-expanded">
+                <span class="uc-acc-exp-num" aria-hidden="true">05</span>
+                <div class="uc-acc-exp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <span class="uc-acc-exp-badge">Use case 05</span>
+                <div class="uc-acc-exp-title">Compliance</div>
+                <div class="uc-acc-exp-items">
+                  <div class="uc-acc-exp-item">GST sales register vs books vs E-invoice matching</div>
+                  <div class="uc-acc-exp-item">GSTR 2B reconciliation</div>
+                  <div class="uc-acc-exp-item">Master data management</div>
+                </div>
+              </div>
+            </div>
+            <div class="uc-acc-panel" tabindex="0">
+              <div class="uc-acc-rest">
+                <div class="uc-acc-rest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+                <span class="uc-acc-rest-num">06</span>
+                <span class="uc-acc-rest-title">Procurement</span>
+              </div>
+              <div class="uc-acc-expanded">
+                <span class="uc-acc-exp-num" aria-hidden="true">06</span>
+                <div class="uc-acc-exp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+                <span class="uc-acc-exp-badge">Use case 06</span>
+                <div class="uc-acc-exp-title">Procurement</div>
+                <div class="uc-acc-exp-items">
+                  <div class="uc-acc-exp-item">Contract intelligence</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uc-card-cta reveal">
+            <a href="#book-demo">and more on the way.....</a>
+          </div>
+        </div>
+
+        <!-- ======== DESIGN D: Spotlight Tab Panel ======== -->
+        <div class="use-cases-grid design-d hidden" id="uc-design-d">
+          <div class="uc-spot-tabs">
+            <button type="button" class="uc-spot-tab active" data-spot="0">
+              <span class="uc-spot-tab-num">01</span>
+              <span class="uc-spot-tab-title">Accounts payable</span>
+              <span class="uc-spot-tab-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            </button>
+            <button type="button" class="uc-spot-tab" data-spot="1">
+              <span class="uc-spot-tab-num">02</span>
+              <span class="uc-spot-tab-title">Accounts receivable</span>
+              <span class="uc-spot-tab-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            </button>
+            <button type="button" class="uc-spot-tab" data-spot="2">
+              <span class="uc-spot-tab-num">03</span>
+              <span class="uc-spot-tab-title">Month end close</span>
+              <span class="uc-spot-tab-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            </button>
+            <button type="button" class="uc-spot-tab" data-spot="3">
+              <span class="uc-spot-tab-num">04</span>
+              <span class="uc-spot-tab-title">Book-keeping</span>
+              <span class="uc-spot-tab-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            </button>
+            <button type="button" class="uc-spot-tab" data-spot="4">
+              <span class="uc-spot-tab-num">05</span>
+              <span class="uc-spot-tab-title">Compliance</span>
+              <span class="uc-spot-tab-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            </button>
+            <button type="button" class="uc-spot-tab" data-spot="5">
+              <span class="uc-spot-tab-num">06</span>
+              <span class="uc-spot-tab-title">Procurement</span>
+              <span class="uc-spot-tab-icon"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+            </button>
+          </div>
+          <div class="uc-spot-detail">
+            <div class="uc-spot-card active" data-spot-card="0">
+              <span class="uc-spot-watermark" aria-hidden="true">01</span>
+              <div class="uc-spot-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+              <span class="uc-spot-card-badge">Use case 01</span>
+              <div class="uc-spot-card-title">Accounts payable</div>
+              <div class="uc-spot-card-items">
+                <div class="uc-spot-card-item">Invoice Processing</div>
+                <div class="uc-spot-card-item">Vendor Reconciliation</div>
+              </div>
+            </div>
+            <div class="uc-spot-card" data-spot-card="1">
+              <span class="uc-spot-watermark" aria-hidden="true">02</span>
+              <div class="uc-spot-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><path d="M17 7l-5 5-5-5"/><path d="M7 17l5-5 5 5"/></svg></div>
+              <span class="uc-spot-card-badge">Use case 02</span>
+              <div class="uc-spot-card-title">Accounts receivable</div>
+              <div class="uc-spot-card-items">
+                <div class="uc-spot-card-item">3 way matching</div>
+                <div class="uc-spot-card-item">Revenue recognition</div>
+              </div>
+            </div>
+            <div class="uc-spot-card" data-spot-card="2">
+              <span class="uc-spot-watermark" aria-hidden="true">03</span>
+              <div class="uc-spot-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M16 2v4M8 2v4"/><path d="M8 15l2 2 4-4"/></svg></div>
+              <span class="uc-spot-card-badge">Use case 03</span>
+              <div class="uc-spot-card-title">Month end close</div>
+              <div class="uc-spot-card-items">
+                <div class="uc-spot-card-item">SL - GL reconciliation</div>
+                <div class="uc-spot-card-item">Provisioning and actualisation</div>
+              </div>
+            </div>
+            <div class="uc-spot-card" data-spot-card="3">
+              <span class="uc-spot-watermark" aria-hidden="true">04</span>
+              <div class="uc-spot-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8M8 11h5"/></svg></div>
+              <span class="uc-spot-card-badge">Use case 04</span>
+              <div class="uc-spot-card-title">Book-keeping</div>
+              <div class="uc-spot-card-items">
+                <div class="uc-spot-card-item">Automated journal entries</div>
+              </div>
+            </div>
+            <div class="uc-spot-card" data-spot-card="4">
+              <span class="uc-spot-watermark" aria-hidden="true">05</span>
+              <div class="uc-spot-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+              <span class="uc-spot-card-badge">Use case 05</span>
+              <div class="uc-spot-card-title">Compliance</div>
+              <div class="uc-spot-card-items">
+                <div class="uc-spot-card-item">GST sales register vs books vs E-invoice matching</div>
+                <div class="uc-spot-card-item">GSTR 2B reconciliation</div>
+                <div class="uc-spot-card-item">Master data management</div>
+              </div>
+            </div>
+            <div class="uc-spot-card" data-spot-card="5">
+              <span class="uc-spot-watermark" aria-hidden="true">06</span>
+              <div class="uc-spot-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+              <span class="uc-spot-card-badge">Use case 06</span>
+              <div class="uc-spot-card-title">Procurement</div>
+              <div class="uc-spot-card-items">
+                <div class="uc-spot-card-item">Contract intelligence</div>
+              </div>
+            </div>
+          </div>
+          <div class="uc-card-cta">
+            <a href="#book-demo">and more on the way.....</a>
+          </div>
+        </div>
+
+        </div><!-- /.uc-grid-wrap -->
       </div>
     </section>
 
     <!-- ============================================================
-         WHY GINTIC — Section [03]
+         WHY GINTIC
          ============================================================ -->
     <section class="why-gintic" id="product">
       <div class="container">
         <div class="reveal">
-          <div class="section-label">[03] Why Gintic</div>
+          <div class="section-label">Why Gintic</div>
           <h2 class="section-headline">Not just an AI tool.<br>An entire Workforce.</h2>
           <p class="section-sub">Gintic gives you an agentic workforce that owns outcomes, not just tasks.</p>
         </div>
@@ -1843,12 +3057,12 @@
     </section>
 
     <!-- ============================================================
-         HOW IT WORKS — Section [04]
+         HOW IT WORKS
          ============================================================ -->
     <section class="how-it-works" id="how-it-works">
       <div class="container">
         <div class="reveal">
-          <div class="section-label">[04] Full stack ownership</div>
+          <div class="section-label">Full stack ownership</div>
           <h2 class="section-headline">Ingestion to interface,<br>we own the whole stack.</h2>
           <p class="section-sub">We solve for outcomes by underwriting process risk. You bring the process knowledge. We deliver the results.</p>
         </div>
@@ -1885,12 +3099,12 @@
     </section>
 
     <!-- ============================================================
-         PRODUCT FEATURES — Section [05]
+         PRODUCT FEATURES
          ============================================================ -->
     <section class="product-features" id="product-features">
       <div class="container">
         <div class="reveal">
-          <div class="section-label">[05] Custom AI agents</div>
+          <div class="section-label">Custom AI agents</div>
           <h2 class="section-headline">AI agents that know your domain,<br>fit your workflows, and work with the tools you already have.</h2>
         </div>
 
@@ -1903,9 +3117,6 @@
             <div style="margin-top:20px">
               <button class="btn-secondary" onclick="document.getElementById('video-dialog').showModal()">Watch 2-min overview ▶</button>
             </div>
-            <!-- REPLACE: Insert Studio video src. Recommended:
-                 <video autoplay loop muted playsinline src="YOUR_STUDIO_VIDEO.mp4" style="width:100%;border-radius:8px;margin-top:20px"></video>
-            -->
           </div>
           <div class="feature-mockup">
             <div class="studio-mockup">
@@ -1926,9 +3137,6 @@
             <div class="feature-label">Observe with Pulse</div>
             <h3 class="feature-heading">Real-time visibility.</h3>
             <p class="feature-body">Gain real time visibility over errors, leaks and blocks with personalised dashboards on Pulse.</p>
-            <!-- REPLACE: Insert Pulse video src. Recommended:
-                 <video autoplay loop muted playsinline src="YOUR_PULSE_VIDEO.mp4" style="width:100%;border-radius:8px;margin-top:20px"></video>
-            -->
           </div>
           <div class="feature-mockup">
             <div class="pulse-mockup">
@@ -1966,9 +3174,6 @@
             <div class="feature-label">Resolve with Gini</div>
             <h3 class="feature-heading">Your AI co-pilot.</h3>
             <p class="feature-body">Conversational trouble shooting and problem solving with Gini, our co-pilot.</p>
-            <!-- REPLACE: Insert Gini video src. Recommended:
-                 <video autoplay loop muted playsinline src="YOUR_GINI_VIDEO.mp4" style="width:100%;border-radius:8px;margin-top:20px"></video>
-            -->
           </div>
           <div class="feature-mockup">
             <div class="gini-mockup">
@@ -1995,12 +3200,12 @@
     </section>
 
     <!-- ============================================================
-         SECURITY — Section [06]
+         SECURITY
          ============================================================ -->
     <section class="security" id="security">
       <div class="container">
         <div class="reveal">
-          <div class="section-label">[06] Secure &amp; compliant</div>
+          <div class="section-label">Secure &amp; compliant</div>
           <h2 class="section-headline">Built for the enterprise.<br>The power of AI with enterprise security.</h2>
         </div>
 
@@ -2048,21 +3253,123 @@
       </div>
     </section>
 
-    <!-- FAQ anchor target -->
-    <section id="faq" style="padding:0"></section>
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="reveal" style="text-align:center">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-headline">Frequently asked questions</h2>
+          <p class="section-sub" style="margin:0 auto">Everything you need to know before getting started with Gintic.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How long does it take to go live?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Most deployments go from kickoff to production in 2 weeks. We handle all the heavy lifting — extracting your SOPs, configuring agents, connecting to your systems, and testing against real-world data — so your team's involvement is minimal.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What systems and ERPs do you integrate with?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Gintic integrates with all major ERPs (SAP, Oracle, Tally, Zoho Books, QuickBooks) and connects to your email, document stores, banking portals, and GST systems. If you use it in your finance workflow, we can connect to it.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is my financial data safe?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Absolutely. We are ISO 27001 certified and SOC 2 Type II audited. Your data is never used to train external models. We offer on-prem and private cloud deployment options so your data never leaves your environment. Every agent action is logged and auditable.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do I need a technical team to use Gintic?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">No. Studio lets you configure workflows, rules, and edge cases without any engineering intervention. Your finance team can manage and adjust agents directly. Our team handles the initial setup and integration so you don't need to allocate internal developers.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What happens when an agent encounters something it can't handle?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Agents are trained to recognize their boundaries. When an exception falls outside configured rules, the agent flags it, routes it to the right human approver in your team, and includes all supporting context. Humans handle decisions; AI handles the work.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Which AI models does Gintic use?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">We are LLM agnostic. Depending on the task, we use the best model for the job — GPT-4, Claude, Gemini, or open-source alternatives. This means no vendor lock-in and you always get the optimal model per task as the landscape evolves.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How is Gintic different from RPA or rule-based automation?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">RPA follows rigid scripts that break when formats change. Gintic's AI agents understand context — they read unstructured documents, handle edge cases intelligently, learn from your corrections, and get smarter with every cycle. They own outcomes, not just clicks.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ============================================================
          FINAL CTA SECTION
          ============================================================ -->
-    <section class="final-cta">
+    <section class="final-cta" id="book-demo">
       <div class="final-cta-inner reveal">
         <h2>Ready to transform your<br>back office operations?</h2>
-        <div class="final-cta-buttons" style="margin-top:40px">
-          <!-- REPLACE: Insert your Calendly/booking link in the href below -->
-          <a href="#book-demo" class="btn-primary">Book a demo →</a>
+        <p class="final-cta-sub" style="margin-top:20px;margin-bottom:32px">Tell us about your workflow and we'll show you how Gintic can automate it in 2 weeks.</p>
+        <form class="demo-form" id="demo-form" novalidate>
+          <div class="demo-form-row">
+            <input type="text" name="name" class="demo-input" placeholder="Your name" aria-label="Your name" required>
+            <input type="email" name="email" class="demo-input" placeholder="Work email" aria-label="Work email" required>
+          </div>
+          <div class="demo-form-row">
+            <input type="text" name="company" class="demo-input" placeholder="Company name" aria-label="Company name" required>
+            <select name="team_size" class="demo-input" aria-label="Team size" required>
+              <option value="" disabled selected>Team size</option>
+              <option value="1-10">1 – 10</option>
+              <option value="11-50">11 – 50</option>
+              <option value="51-200">51 – 200</option>
+              <option value="201-1000">201 – 1,000</option>
+              <option value="1000+">1,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary demo-submit">Book a demo →</button>
+          <p class="reassurance">No commitment required. We'll reach out within 24 hours.</p>
+        </form>
+        <div class="demo-success hidden" id="demo-success">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px;margin-bottom:16px"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--white);margin-bottom:8px">Thank you!</h3>
+          <p class="final-cta-sub" style="margin-bottom:0">We'll be in touch within 24 hours to schedule your demo.</p>
         </div>
         <p class="final-cta-sub" style="margin-top:48px;margin-bottom:16px">Want to help build the future of enterprise AI?</p>
-        <!-- REPLACE: Insert LinkedIn company page URL or careers page -->
         <a href="https://www.linkedin.com/company/gintic-ai/" target="_blank" rel="noopener" class="final-cta-link">View open positions →</a>
       </div>
     </section>
@@ -2082,7 +3389,6 @@
           <p class="footer-tagline">AI Workforce for Enterprise Finance</p>
           <p class="footer-address">60 Feet Rd, KHB Colony, 6th Block,<br>Koramangala, Bengaluru,<br>Karnataka 560095</p>
           <div class="footer-email">
-            <!-- REPLACE: Insert contact email address -->
             <a href="mailto:hello@gintic.ai">hello@gintic.ai</a>
           </div>
         </div>
@@ -2101,24 +3407,20 @@
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
           <ul class="footer-links">
-            <li><a href="#">About us</a></li>
-            <!-- REPLACE: Insert LinkedIn company page URL -->
+            <li><a href="#product">About us</a></li>
             <li><a href="https://www.linkedin.com/company/gintic-ai/" target="_blank" rel="noopener">Careers</a></li>
             <li><a href="#book-demo">Contact</a></li>
-            <!-- REPLACE: Insert /privacy-policy URL -->
             <li><a href="/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">Connect</div>
-          <!-- REPLACE: Insert LinkedIn company page URL -->
           <a href="https://www.linkedin.com/company/gintic-ai/" target="_blank" rel="noopener" class="footer-linkedin">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             Follow on LinkedIn
           </a>
-          <!-- REPLACE: Connect to Mailchimp/ConvertKit endpoint. Replace form action with real endpoint. -->
-          <form class="newsletter-form" action="#" method="POST" onsubmit="return false;">
+          <form class="newsletter-form" id="newsletter-form">
             <input type="email" name="EMAIL" class="newsletter-input" placeholder="Your email" aria-label="Email for newsletter" required>
             <button type="submit" class="newsletter-btn">Stay updated</button>
           </form>
@@ -2133,8 +3435,7 @@
       <div class="footer-bottom">
         <span>© 2026 Gintic.ai</span>
         <span class="footer-legal">
-          <!-- REPLACE: Insert /privacy-policy URL -->
-          <a href="/privacy-policy">Privacy Policy</a> · <!-- REPLACE: Insert /terms URL --> <a href="/terms">Terms of Service</a>
+          <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms of Service</a>
         </span>
       </div>
     </div>
@@ -2168,6 +3469,121 @@
           mobileMenu.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
+        });
+      });
+
+      // --- Use Cases design switcher (A: grid, B: bento, C: rail, D: timeline) ---
+      var ucOrder = ['a', 'b', 'c', 'd'];
+      var designs = {
+        a: document.getElementById('uc-design-a'),
+        b: document.getElementById('uc-design-b'),
+        c: document.getElementById('uc-design-c'),
+        d: document.getElementById('uc-design-d')
+      };
+      var dots = document.querySelectorAll('.uc-dot');
+      var prevBtn = document.getElementById('uc-prev');
+      var nextBtn = document.getElementById('uc-next');
+      var currentDesign = 'a';
+      var switching = false;
+
+      function forceReveals(container) {
+        container.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
+
+      function switchDesign(to) {
+        if (to === currentDesign || !designs[to] || switching) return;
+        switching = true;
+
+        var fromIdx = ucOrder.indexOf(currentDesign);
+        var toIdx = ucOrder.indexOf(to);
+        var dir = toIdx > fromIdx ? 1 : -1;
+        var outgoing = designs[currentDesign];
+        var incoming = designs[to];
+
+        outgoing.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        outgoing.style.opacity = '0';
+        outgoing.style.transform = dir > 0 ? 'translateX(-20px)' : 'translateX(20px)';
+
+        setTimeout(function () {
+          outgoing.classList.add('hidden');
+          outgoing.style.opacity = '';
+          outgoing.style.transform = '';
+          outgoing.style.transition = '';
+
+          incoming.classList.remove('hidden');
+          forceReveals(incoming);
+          incoming.style.opacity = '0';
+          incoming.style.transform = dir > 0 ? 'translateX(20px)' : 'translateX(-20px)';
+          incoming.offsetHeight;
+          incoming.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          incoming.style.opacity = '1';
+          incoming.style.transform = 'translateX(0)';
+
+          setTimeout(function () {
+            incoming.style.opacity = '';
+            incoming.style.transform = '';
+            incoming.style.transition = '';
+            switching = false;
+          }, 320);
+        }, 300);
+
+        currentDesign = to;
+        dots.forEach(function (d) {
+          var id = d.getAttribute('data-design');
+          var on = id === to;
+          d.classList.toggle('active', on);
+          if (on) d.setAttribute('aria-current', 'true');
+          else d.removeAttribute('aria-current');
+        });
+      }
+
+      function stepDesign(delta) {
+        var i = ucOrder.indexOf(currentDesign);
+        var next = (i + delta + ucOrder.length) % ucOrder.length;
+        switchDesign(ucOrder[next]);
+      }
+
+      prevBtn.addEventListener('click', function () {
+        stepDesign(-1);
+      });
+      nextBtn.addEventListener('click', function () {
+        stepDesign(1);
+      });
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          switchDesign(dot.getAttribute('data-design'));
+        });
+      });
+
+      // --- Design D: Spotlight tab panel ---
+      var spotTabs = document.querySelectorAll('.uc-spot-tab');
+      var spotCards = document.querySelectorAll('.uc-spot-card');
+
+      function activateSpot(idx) {
+        spotTabs.forEach(function (t) {
+          t.classList.toggle('active', t.getAttribute('data-spot') === String(idx));
+        });
+        spotCards.forEach(function (c) {
+          var isTarget = c.getAttribute('data-spot-card') === String(idx);
+          if (isTarget && !c.classList.contains('active')) {
+            c.classList.add('active');
+            c.style.animation = 'none';
+            c.offsetHeight;
+            c.style.animation = '';
+          } else if (!isTarget) {
+            c.classList.remove('active');
+          }
+        });
+      }
+
+      spotTabs.forEach(function (tab) {
+        tab.addEventListener('mouseenter', function () {
+          activateSpot(tab.getAttribute('data-spot'));
+        });
+        tab.addEventListener('click', function () {
+          activateSpot(tab.getAttribute('data-spot'));
         });
       });
 
@@ -2251,7 +3667,96 @@
         }, { threshold: 0.5 });
         wfObs.observe(document.getElementById('workflow-blocks'));
       }
+
+      // --- FAQ accordion ---
+      document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq-item');
+          var wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(function (el) {
+            el.classList.remove('open');
+            el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!wasOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // --- Scroll-spy for nav links ---
+      var navAnchors = document.querySelectorAll('.nav-links a');
+      var sections = [];
+      navAnchors.forEach(function (a) {
+        var id = a.getAttribute('href').replace('#', '');
+        var sec = document.getElementById(id);
+        if (sec) sections.push({ el: sec, link: a });
+      });
+
+      function updateScrollSpy() {
+        var scrollY = window.scrollY + 120;
+        var active = null;
+        sections.forEach(function (s) {
+          if (s.el.offsetTop <= scrollY) active = s;
+        });
+        navAnchors.forEach(function (a) { a.classList.remove('active'); });
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', updateScrollSpy, { passive: true });
+      updateScrollSpy();
+
+      // --- Newsletter form ---
+      var nlForm = document.getElementById('newsletter-form');
+      if (nlForm) {
+        nlForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var emailInput = nlForm.querySelector('input[type="email"]');
+          var btn = nlForm.querySelector('.newsletter-btn');
+          if (!emailInput.value || !emailInput.validity.valid) {
+            emailInput.focus();
+            return;
+          }
+          btn.textContent = 'Subscribed!';
+          btn.disabled = true;
+          emailInput.disabled = true;
+          emailInput.value = '';
+          setTimeout(function () {
+            btn.textContent = 'Stay updated';
+            btn.disabled = false;
+            emailInput.disabled = false;
+          }, 3000);
+        });
+      }
+
+      // --- Demo booking form ---
+      var demoForm = document.getElementById('demo-form');
+      var demoSuccess = document.getElementById('demo-success');
+      if (demoForm && demoSuccess) {
+        demoForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var inputs = demoForm.querySelectorAll('[required]');
+          var valid = true;
+          inputs.forEach(function (inp) {
+            if (!inp.value || (inp.type === 'email' && !inp.validity.valid)) {
+              inp.focus();
+              valid = false;
+            }
+          });
+          if (!valid) return;
+          demoForm.classList.add('hidden');
+          demoSuccess.classList.remove('hidden');
+        });
+      }
     })();
+  </script>
+
+  <!-- Google Analytics — replace GA_MEASUREMENT_ID with your actual ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
   </script>
 
 </body>
